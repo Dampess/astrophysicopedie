@@ -1,30 +1,56 @@
-// Header.js
-import React from "react";
+import React, { useState } from "react";
 import { Link as RouterLink } from "react-router-dom"; // Importer Link de react-router-dom
 import "./Header.css";
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false); // État pour le menu hamburger
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen); // Bascule l'état du menu
+  };
+
   return (
     <header className="header">
       <h1 className="logo">
-        <RouterLink to="/astrophysicopedie">AstroPhysicoPédie</RouterLink>{" "}
+        <RouterLink to="/astrophysicopedie">AstroPhysicoPédie</RouterLink>
       </h1>
+
+      {/* Bouton hamburger pour petits écrans */}
+      <button className="menu-toggle" onClick={toggleMenu}>
+        &#9776;
+      </button>
+
       <nav className="nav">
-        <ul>
+        <ul className={menuOpen ? "open" : ""}>
           <li>
-            <RouterLink to="/News">Actualités</RouterLink>{" "}
+            <RouterLink to="/News" onClick={toggleMenu}>
+              Actualités
+            </RouterLink>
           </li>
           <li>
-            <RouterLink to="/stars">Étoiles</RouterLink>{" "}
-            {/* Lien vers la page des étoiles */}
+            <RouterLink to="/stars" onClick={toggleMenu}>
+              Étoiles
+            </RouterLink>
           </li>
           <li>
-            <RouterLink to="/galaxies">Galaxies</RouterLink>{" "}
-            {/* Lien vers la page des galaxies */}
+            <RouterLink to="/galaxies" onClick={toggleMenu}>
+              Galaxies
+            </RouterLink>
           </li>
           <li>
-            <RouterLink to="/laws">Lois</RouterLink>{" "}
-            {/* Lien vers la page des lois */}
+            <RouterLink to="/laws" onClick={toggleMenu}>
+              Lois
+            </RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/tools" onClick={toggleMenu}>
+              Outils
+            </RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/visualizations" onClick={toggleMenu}>
+              Visualiser
+            </RouterLink>
           </li>
         </ul>
       </nav>

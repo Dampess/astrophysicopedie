@@ -70,7 +70,7 @@ const Home = () => {
               constellations et galaxies.
             </p>
             <button className="explore-btn">
-              <RouterLink to="/">
+              <RouterLink to="/visualizations">
                 Découvrir
               </RouterLink>
             </button>

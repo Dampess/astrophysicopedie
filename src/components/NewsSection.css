@@ -4,68 +4,60 @@
 }
 
 .news-cards {
-  display: grid; /* Utiliser une grille pour un meilleur agencement */
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Nombre de colonnes flexibles */
-  gap: 20px; /* Espace entre les cartes */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Colonnes flexibles */
+  gap: 20px;
   text-align: left;
 }
 
 .news-card {
   background: white;
-  border: 1px solid #ddd; /* Bordure pour les cartes */
-  border-radius: 8px; /* Coins arrondis */
-  overflow: hidden; /* Empêche le débordement du contenu */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre pour l'effet de profondeur */
-  transition: transform 0.2s; /* Transition pour l'effet au survol */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
   display: flex;
-  flex-direction: column; /* Aligner le contenu verticalement */
-  text-align:left; /* Centrer le texte */
+  flex-direction: column;
+  text-align: left;
 }
 
 .news-card:hover {
-  transform: scale(1.02); /* Zoom léger au survol */
+  transform: scale(1.02);
 }
 
 .news-image {
-  width: 100%; /* Assure que l'image occupe toute la largeur */
-  height: 300px; /* Hauteur fixe pour uniformiser l'affichage */
-  object-fit: cover; /* Recadrer l'image pour qu'elle ne soit pas déformée */
-  border-bottom: 1px solid #ddd; /* Bordure en bas de l'image */
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
 }
 
-/* Taille normale */
 .news-card.normal {
-  
-  height: auto; /* Hauteur auto pour les cartes normales */
+  height: auto;
 }
 
-/* Taille moyenne */
 .news-card.middle {
-  grid-column: span 1; /* S'étend sur deux colonnes */
-  height: auto; /* Hauteur auto pour la carte moyenne */
+  grid-column: span 1;
+  height: auto;
 }
 
-/* Taille grande */
 .news-card.large {
-  grid-column: span 1; /* S'étend sur trois colonnes */
-  height: auto; /* Hauteur auto pour la carte grande */
+  grid-column: span 1;
+  height: auto;
 }
 
 .news-card h3 {
   font-size: 1.3em;
-  margin: 10px; /* Ajout de marges pour le titre */
-  font-weight: bold; /* Texte en gras pour le titre */
+  margin: 10px;
+  font-weight: bold;
 }
 
 .news-card p {
   font-size: 0.95em;
-  padding: 0 10px 10px; /* Padding pour le texte */
-  flex-grow: 1; /* Permet au paragraphe de s'étendre */
-}
-
-/* Ajout de styles pour un meilleur contraste */
-.news-card p {
-  color: #555; /* Couleur de texte plus douce */
+  padding: 0 10px 10px;
+  flex-grow: 1;
+  color: #555;
 }
 
 .pagination {
@@ -95,4 +87,66 @@
 .prev-btn:hover:not(:disabled),
 .next-btn:hover:not(:disabled) {
   background-color: #0056b3;
+}
+
+/* RESPONSIVITÉ */
+
+/* Pour les petits écrans (moins de 768px) */
+@media (max-width: 768px) {
+   .news-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 2fr)); /* Réduire la taille minimale pour que les cartes restent sur la même ligne */
+    gap: 15px;
+    overflow-x: auto; /* Ajouter un défilement horizontal si nécessaire */
+  }
+
+  .news-cards::-webkit-scrollbar {
+    display: none; /* Masquer la barre de défilement si nécessaire */
+  }
+
+  .news-image {
+    height: 150px; /* Réduire la taille de l'image pour que tout rentre sur une ligne */
+  }
+
+  .news-card {
+    min-width: 150px; /* Largeur minimale pour permettre l'affichage des cartes sur une ligne */
+  }
+
+  .news-card h3 {
+    font-size: 1em; /* Réduire la taille du titre */
+  }
+
+  .news-card p {
+    font-size: 0.8em; /* Réduire la taille du texte */
+    padding: 0 8px 8px;
+  }
+  
+  .prev-btn, .next-btn {
+    padding: 8px 16px; /* Réduire la taille des boutons */
+  }
+}
+
+/* Pour les très grands écrans (plus de 1440px) */
+@media (min-width: 1440px) {
+  .news-cards {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Plus grandes colonnes pour grands écrans */
+    gap: 30px; /* Espacement plus important */
+  }
+
+  .news-image {
+    height: 350px; /* Agrandir l'image sur les grands écrans */
+  }
+
+  .news-card h3 {
+    font-size: 1.5em; /* Augmenter la taille du titre */
+  }
+
+  .news-card p {
+    font-size: 1em; /* Augmenter la taille du texte */
+    padding: 0 12px 12px;
+  }
+  
+  .prev-btn, .next-btn {
+    padding: 12px 24px; /* Augmenter la taille des boutons */
+  }
 }

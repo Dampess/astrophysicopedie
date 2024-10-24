@@ -3,7 +3,7 @@
 .header {
   background-color: rgba(24, 24, 50, 0.95);
   color: #ffffff;
-  padding: 2px 25px; /* Ajustement de l'espacement pour réduire le dépassement */
+  padding: 10px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,17 +16,22 @@
   transition: background-color 0.3s;
 }
 
-a{
+a {
   text-decoration: none;
   color: #ffffff;
 }
-.header:hover{
-  background-color:rgba(24, 24, 50);
+
+.header:hover {
+  background-color: rgba(24, 24, 50);
 }
 
 .logo {
-  font-size: 2.5rem; /* Taille de la police pour le logo */
+  font-size: 2.5rem;
   font-weight: bold;
+}
+
+.nav {
+  display: flex;
 }
 
 .nav ul {
@@ -34,16 +39,17 @@ a{
   margin: 0;
   padding: 0;
   display: flex;
+  align-items: center;
 }
 
 .nav li {
-  margin: 0 15px; /* Espacement entre les éléments de la navigation */
+  margin: 0 15px;
 }
 
 .nav a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 1.1rem; /* Ajustement de la taille de la police pour plus d'harmonie */
+  font-size: 1.1rem;
   position: relative;
   transition: color 0.3s, transform 0.3s;
 }
@@ -52,40 +58,90 @@ a{
   content: '';
   display: block;
   width: 0;
-  height: 2px; /* Épaisseur de la ligne de soulignement */
-  background: #007bff; /* Couleur de la ligne de soulignement */
+  height: 2px;
+  background: #007bff;
   transition: width 0.3s;
   position: absolute;
   left: 0;
-  bottom: -5px; /* Position de la ligne de soulignement */
+  bottom: -5px;
 }
 
 .nav a:hover {
-  color: #007bff; /* Couleur au survol */
-  transform: translateY(-2px); /* Légère élévation au survol */
+  color: #007bff;
+  transform: translateY(-2px);
   cursor: pointer;
 }
 
 .nav a:hover::after {
-  width: 100%; /* Élargir la ligne de soulignement au survol */
+  width: 100%;
+}
+
+/* MENU HAMBURGER POUR PETITS ÉCRANS */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #ffffff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle:focus {
+  outline: none;
 }
 
 @media (max-width: 768px) {
   .header {
-    padding: 10px; /* Réduire le padding sur les petits écrans */
-  }
-
-  .nav ul {
-    flex-direction: column; /* Empiler les éléments sur les petits écrans */
-    align-items: center; /* Centrer les éléments */
-    padding: 10px 0; /* Ajout d'espacement autour de la liste */
-  }
-
-  .nav li {
-    margin: 10px 0; /* Espacement vertical entre les éléments */
+    padding: 10px;
   }
 
   .logo {
-    margin-right: 0; /* Supprimer l'espacement à droite du logo */
+    font-size: 2rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: rgba(24, 24, 50, 0.9);
+    width: 100%;
+    display: none;
+    padding: 0;
+  }
+
+  .nav ul.open {
+    display: flex;
+  }
+
+  .nav li {
+    margin: 10px 0;
+  }
+
+  .nav a {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    display: block;
+  }
+}
+
+/* GRANDS ÉCRANS */
+@media (min-width: 1440px) {
+  .logo {
+    font-size: 3rem;
+  }
+
+  .nav a {
+    font-size: 1.3rem;
+  }
+
+  .nav li {
+    margin: 0 20px;
   }
 }

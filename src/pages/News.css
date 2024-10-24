@@ -1,104 +1,128 @@
 .news-container {
-  max-width: 1200px; /* Largeur maximale pour un affichage optimal */
-  margin: 20px auto; /* Centrage avec espacement en haut */
-  padding: 20px; /* Espacement interne */
-  color: #333; /* Couleur du texte par défaut */
-  border-radius: 12px; /* Coins arrondis */
-  display: grid; /* Affichage en grille */
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(300px, 1fr)
-  ); /* Grille responsive */
-  gap: 20px; /* Espacement entre les articles */
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  color: #333;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grille responsive */
+  gap: 20px;
 }
 
 .news-container h2 {
-  text-align: left; /* Alignement à gauche pour le titre principal */
-  margin-bottom: 20px; /* Espacement en bas */
+  text-align: left;
+  margin-bottom: 20px;
   margin-top: 20vh;
-  font-size: 2em; /* Taille de police plus grande pour le titre */
-  color: #2c3e50; /* Couleur du titre */
-  font-weight: bold; /* Gras pour le titre */
-  grid-column: span 3; /* Prend toute la largeur de la grille */
+  font-size: 2em;
+  color: #2c3e50;
+  font-weight: bold;
+  grid-column: span 3; /* S'étend sur toute la largeur */
 }
 
 .news-article {
-  background-color: #f3f4f6; /* Fond légèrement coloré pour les articles */
-  border-radius: 8px; /* Coins arrondis pour les articles */
-  padding: 20px; /* Espacement interne */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation pour l'ombre et l'élévation */
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .news-article:hover {
-  transform: translateY(-5px); /* Légère élévation au survol */
-  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2); /* Ombre sur hover */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
 }
 
 .news-article img {
-  width: 100%; /* L'image prend toute la largeur de l'article */
-  border-radius: 8px; /* Coins arrondis pour l'image */
-  margin-bottom: 15px; /* Espacement en bas de l'image */
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
 .news-article h3 {
-  font-size: 1.6em; /* Taille du texte pour le titre des articles */
-  margin: 0 0 10px 0; /* Espacement en bas */
-  color: #333; /* Couleur du titre de l'article */
+  font-size: 1.6em;
+  margin: 0 0 10px;
+  color: #333;
 }
 
 .news-article p {
-  font-size: 1em; /* Taille du texte du corps */
-  color: #555; /* Couleur gris pour le texte du corps */
-  line-height: 1.6; /* Espacement entre les lignes */
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
 }
 
 .news-article a {
-  color: #007bff; /* Couleur du lien */
-  text-decoration: none; /* Pas de soulignement par défaut */
-  font-weight: bold; /* Mettre le lien en gras */
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .news-article a:hover {
-  text-decoration: underline; /* Soulignement au survol */
-  color: #0056b3; /* Couleur plus foncée au survol */
+  text-decoration: underline;
+  color: #0056b3;
 }
+
 .pagination {
-  display: flex; /* Flex pour aligner les boutons horizontalement */
-  justify-content: center; /* Centrer les boutons */
-  margin-top: 20px; /* Espacement au-dessus de la pagination */
-  
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .pagination button {
-  background-color: #007bff; /* Couleur de fond des boutons */
-  color: white; /* Couleur du texte */
-  border: none; /* Pas de bordure */
-  padding: 10px 15px; /* Espacement interne */
-  margin: 0 5px; /* Espacement entre les boutons */
-  border-radius: 5px; /* Coins arrondis */
-  cursor: pointer; /* Curseur pointer pour indiquer que c'est cliquable */
-  transition: background-color 0.3s; /* Transition pour le changement de couleur */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .pagination button:hover {
-  background-color: #0056b3; /* Couleur de fond au survol */
+  background-color: #0056b3;
 }
 
 .pagination .active {
-  background-color: #0056b3; /* Couleur différente pour la page active */
-  font-weight: bold; /* Mettre en gras la page active */
+  background-color: #0056b3;
+  font-weight: bold;
 }
 
+/* RESPONSIVITÉ */
+
+/* Pour les petits écrans (moins de 600px) */
 @media (max-width: 600px) {
   .news-container {
-    padding: 15px; /* Moins d'espacement sur petits écrans */
+    padding: 15px; /* Réduire le padding sur mobile */
+    display: block;
   }
 
+  .news-article{
+    margin-bottom: 15px;
+  }
   .news-article h3 {
-    font-size: 1.4em; /* Ajustement de la taille sur mobile */
+    font-size: 1.4em; /* Réduire la taille du titre sur mobile */
   }
 
   .news-article p {
-    font-size: 0.9em; /* Ajustement de la taille sur mobile */
+    font-size: 0.9em; /* Réduire la taille du texte */
+  }
+}
+
+/* Pour les très grands écrans (plus de 1440px) */
+@media (min-width: 1440px) {
+  .news-container {
+    max-width: 1600px; /* Augmenter la largeur maximale pour les grands écrans */
+    gap: 30px; /* Augmenter l'espacement entre les articles */
+  }
+
+  .news-article img {
+    height: 350px; /* Agrandir l'image pour une meilleure lisibilité */
+  }
+
+  .news-article h3 {
+    font-size: 1.8em; /* Augmenter la taille des titres */
+  }
+
+  .news-article p {
+    font-size: 1.1em; /* Agrandir le texte pour les écrans larges */
   }
 }

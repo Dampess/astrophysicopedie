@@ -48,7 +48,7 @@ const NewsSection = () => {
   ];
 
   const [currentPage, setCurrentPage] = useState(1); // Page actuelle
-  const cardsPerPage = 3; // Nombre de cartes par page
+  const cardsPerPage = 4; // Nombre de cartes par page
 
   // Calcul de l'index des cartes à afficher
   const indexOfLastCard = currentPage * cardsPerPage;

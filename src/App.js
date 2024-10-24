@@ -7,7 +7,9 @@ import Stars from "./pages/Stars";
 import Galaxies from "./pages/Galaxies"; 
 import Laws from "./pages/Laws"; 
 import Footer from "./components/Footer"; 
-import News from "./pages/News"
+import News from "./pages/News";
+import Tools from "./pages/Tools";
+import Visualizations from "./pages/Visualizations";
 import "./App.css";
 
 const App = () => {
@@ -20,6 +22,8 @@ const App = () => {
         <Route path="/galaxies" element={<Galaxies />} />
         <Route path="/laws" element={<Laws />} />
         <Route path="/news" element={<News />} />
+        <Route path="/tools" element={<Tools />} />
+        <Route path="/visualizations" element={<Visualizations />} />
       </Routes>
       <Footer />
     </Router>
