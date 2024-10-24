@@ -1,0 +1,178 @@
+/* Home.css */
+
+/* Importation de la police Roboto depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Variables CSS */
+:root {
+  --primary-color: #007bff;
+  --primary-dark: #0056b3;
+  --background-overlay: rgba(0, 0, 0, 0.526);
+  --shadow-light: rgba(0, 0, 0, 0.3);
+  --shadow-dark: rgba(0, 0, 0, 0.5);
+  --text-light: #ddd;
+  --text-dark: #ffffff;
+}
+
+/* Styles généraux de la page d'accueil */
+.home-container {
+  position: relative; /* Nécessaire pour le positionnement des éléments enfants */
+  color: var(--text-dark); /* Couleur du texte */
+}
+
+/* Styles pour l'effet de parallaxe */
+.parallax {
+  background-image: url('../assets/images/bg-HomePage.jpg'); /* Image de fond */
+  height: 145vh; /* Hauteur de la section parallax */
+  background-attachment: fixed; /* Fixer l'image d'arrière-plan pour l'effet de parallaxe */
+  background-position: center; /* Centrer l'image */
+  background-repeat: no-repeat; /* Ne pas répéter l'image */
+  background-size: cover; /* Couvrir entièrement la section */
+  width: 100%; /* Largeur pleine */
+}
+
+/* Styles pour le contenu superposé sur l'image de fond */
+.content {
+  z-index: 2; /* S'assurer que le contenu est au-dessus de l'image de fond */
+  height: 145vh; /* Hauteur de la section de contenu */
+  padding-top: 25vh; /* Espacement pour un meilleur alignement vertical */
+  background-color: var(--background-overlay); /* Couleur de fond semi-transparente */
+  padding-left: 2%;
+}
+
+/* Styles pour le titre principal */
+.content h1 {
+  margin-top: 20vh;
+  font-size: 4rem; /* Taille de police agrandie pour plus d'impact */
+  color: var(--text-dark); /* Couleur du texte */
+  text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.9); /* Ombre plus forte et douce pour le texte */
+  letter-spacing: 2px; /* Espacement des lettres pour un effet visuel amélioré */
+}
+
+/* Styles pour les paragraphes de contenu */
+.content p {
+  font-size: 1.5rem; /* Taille de police agrandie pour plus de lisibilité */
+  margin-top: 15px; /* Espacement supérieur */
+  color: var(--text-light); /* Couleur du texte pour le paragraphe */
+}
+
+/* Styles pour le bouton d'exploration */
+.explore-btn {
+  margin-top: 30px; /* Espacement supérieur */
+  padding: 15px 30px; /* Espacement intérieur */
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-dark)); /* Dégradé de couleur */
+  border: none; /* Pas de bordure */
+  border-radius: 5px; /* Coins arrondis */
+  color: var(--text-dark); /* Couleur du texte */
+  font-size: 1.2rem; /* Taille de la police */
+  cursor: pointer; /* Curseur pointeur au survol */
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s; /* Transition pour les effets au survol */
+  z-index: 2; /* S'assurer que le bouton est au-dessus des autres éléments */
+}
+
+/* Styles pour l'effet de survol du bouton */
+.explore-btn:hover {
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary-color)); /* Changement de dégradé au survol */
+  transform: scale(1.05); /* Légère augmentation de la taille */
+  box-shadow: 0 4px 20px var(--shadow-dark); /* Ombre au survol */
+}
+
+.ellipse{
+  background-image: url('../assets/images/exoplanete.jpg');
+  height: 120vh;
+  background-attachment: fixed; /* Fixer l'image d'arrière-plan pour l'effet de parallaxe */
+  background-position: center; /* Centrer l'image */
+  background-repeat: no-repeat; /* Ne pas répéter l'image */
+  background-size: cover; /* Couvrir entièrement la section */
+  padding-top: 20%;
+}
+
+.ellipse2{
+  background-image: url('../assets/images/trous-noir.jpg');
+  height: 120vh;
+  background-attachment: fixed; /* Fixer l'image d'arrière-plan pour l'effet de parallaxe */
+  background-position: center; /* Centrer l'image */
+  background-repeat: no-repeat; /* Ne pas répéter l'image */
+  background-size: cover; /* Couvrir entièrement la section */
+  padding-top: 20%;
+}
+
+.ellipse h2, .ellipse2 h2{
+  font-size: 4rem;
+  margin-left: 1%;
+}
+
+.ellipse p, .ellipse2 p{
+  font-size: 1.5rem; /* Taille de police agrandie pour plus de lisibilité */
+  margin-top: 15px; /* Espacement supérieur */
+  margin-left: 2%;
+  color: var(--text-light); /* Couleur du texte pour le paragraphe */
+}
+
+.feature-section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.feature-section {
+  padding: 50px 20px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+
+.feature-section{
+  text-align: left;
+  color: #0056b3;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.feature {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s;
+}
+.feature{
+  text-align: center;
+}
+.feature:hover {
+  transform: translateY(-10px);
+}
+
+.feature-icon {
+  width: 80px;
+  margin-bottom: 20px;
+  fill: #6c63ff; /* Couleur principale de l'icône */
+  z-index: 50;
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  text-align: left;
+}
+
+
+

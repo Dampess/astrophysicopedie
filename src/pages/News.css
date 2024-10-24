@@ -1,0 +1,104 @@
+.news-container {
+  max-width: 1200px; /* Largeur maximale pour un affichage optimal */
+  margin: 20px auto; /* Centrage avec espacement en haut */
+  padding: 20px; /* Espacement interne */
+  color: #333; /* Couleur du texte par défaut */
+  border-radius: 12px; /* Coins arrondis */
+  display: grid; /* Affichage en grille */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(300px, 1fr)
+  ); /* Grille responsive */
+  gap: 20px; /* Espacement entre les articles */
+}
+
+.news-container h2 {
+  text-align: left; /* Alignement à gauche pour le titre principal */
+  margin-bottom: 20px; /* Espacement en bas */
+  margin-top: 20vh;
+  font-size: 2em; /* Taille de police plus grande pour le titre */
+  color: #2c3e50; /* Couleur du titre */
+  font-weight: bold; /* Gras pour le titre */
+  grid-column: span 3; /* Prend toute la largeur de la grille */
+}
+
+.news-article {
+  background-color: #f3f4f6; /* Fond légèrement coloré pour les articles */
+  border-radius: 8px; /* Coins arrondis pour les articles */
+  padding: 20px; /* Espacement interne */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation pour l'ombre et l'élévation */
+}
+
+.news-article:hover {
+  transform: translateY(-5px); /* Légère élévation au survol */
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2); /* Ombre sur hover */
+}
+
+.news-article img {
+  width: 100%; /* L'image prend toute la largeur de l'article */
+  border-radius: 8px; /* Coins arrondis pour l'image */
+  margin-bottom: 15px; /* Espacement en bas de l'image */
+}
+
+.news-article h3 {
+  font-size: 1.6em; /* Taille du texte pour le titre des articles */
+  margin: 0 0 10px 0; /* Espacement en bas */
+  color: #333; /* Couleur du titre de l'article */
+}
+
+.news-article p {
+  font-size: 1em; /* Taille du texte du corps */
+  color: #555; /* Couleur gris pour le texte du corps */
+  line-height: 1.6; /* Espacement entre les lignes */
+}
+
+.news-article a {
+  color: #007bff; /* Couleur du lien */
+  text-decoration: none; /* Pas de soulignement par défaut */
+  font-weight: bold; /* Mettre le lien en gras */
+}
+
+.news-article a:hover {
+  text-decoration: underline; /* Soulignement au survol */
+  color: #0056b3; /* Couleur plus foncée au survol */
+}
+.pagination {
+  display: flex; /* Flex pour aligner les boutons horizontalement */
+  justify-content: center; /* Centrer les boutons */
+  margin-top: 20px; /* Espacement au-dessus de la pagination */
+  
+}
+
+.pagination button {
+  background-color: #007bff; /* Couleur de fond des boutons */
+  color: white; /* Couleur du texte */
+  border: none; /* Pas de bordure */
+  padding: 10px 15px; /* Espacement interne */
+  margin: 0 5px; /* Espacement entre les boutons */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur pointer pour indiquer que c'est cliquable */
+  transition: background-color 0.3s; /* Transition pour le changement de couleur */
+}
+
+.pagination button:hover {
+  background-color: #0056b3; /* Couleur de fond au survol */
+}
+
+.pagination .active {
+  background-color: #0056b3; /* Couleur différente pour la page active */
+  font-weight: bold; /* Mettre en gras la page active */
+}
+
+@media (max-width: 600px) {
+  .news-container {
+    padding: 15px; /* Moins d'espacement sur petits écrans */
+  }
+
+  .news-article h3 {
+    font-size: 1.4em; /* Ajustement de la taille sur mobile */
+  }
+
+  .news-article p {
+    font-size: 0.9em; /* Ajustement de la taille sur mobile */
+  }
+}

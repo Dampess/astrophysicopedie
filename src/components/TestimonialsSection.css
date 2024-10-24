@@ -1,0 +1,100 @@
+/* Styles pour les sections d'actualités et de témoignages */
+.testimonial-section {
+  padding: 10px 5px; /* Espacement intérieur augmenté pour plus de respirabilité */
+  border-radius: 15px; /* Coins plus arrondis pour un style plus moderne */
+  background-color: #33333345;
+  color: #333; /* Couleur de texte plus sombre pour un meilleur contraste */
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1); /* Ombre plus subtile */
+ margin: 10vh auto 10vh;
+ width: 95%;
+}
+
+/* Styles pour la mise en page des témoignages */
+.testimonials {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start; /* Alignement en haut */
+  flex-wrap: wrap;
+  gap: 20px; /* Espace entre les témoignages */
+}
+
+/* Styles pour chaque témoignage */
+.testimonial {
+  margin: 15px; /* Espacement autour des témoignages */
+  padding: 20px; /* Plus d'espace à l'intérieur */
+  background: rgba(255, 255, 255, 0.8); /* Couleur de fond plus opaque pour meilleure lisibilité */
+  border-radius: 10px; /* Coins plus arrondis */
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 45%; /* Plus de largeur pour l'ajustement sur grand écran */
+}
+
+.testimonial:hover {
+  transform: translateY(-5px); /* Légère élévation au survol */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Ombre plus intense au survol */
+}
+
+.testimonial h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #0073e6; /* Couleur accentuée pour les titres */
+}
+
+.testimonial p {
+  font-size: 1em;
+  line-height: 1.6; /* Meilleure lisibilité */
+  color: #555; /* Couleur de texte plus douce */
+}
+
+/* Navigation des témoignages */
+.testimonial-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px; /* Espace supérieur plus large */
+}
+
+.nav-button {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  color: #0073e6; /* Couleur plus vive pour les boutons */
+  padding: 12px 18px; /* Plus de padding pour rendre les boutons plus larges */
+  cursor: pointer;
+  font-size: 1.1rem;
+  border-radius: 50px; /* Forme des boutons arrondie */
+  transition: background 0.3s, transform 0.2s; /* Ajout de transition sur la taille */
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: scale(1.05); /* Légère mise en avant au survol */
+}
+
+/* Styles pour la pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-button {
+  background-color: transparent;
+  border: 2px solid #0073e6; /* Bordure accentuée pour plus de contraste */
+  color: #0073e6;
+  padding: 8px 16px; /* Plus de padding pour un meilleur clic */
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 50px; /* Boutons arrondis */
+  transition: background 0.3s, color 0.3s; /* Transition douce sur les boutons */
+}
+
+.page-button.active {
+  background-color: #0073e6; /* Couleur vive pour l'actif */
+  color: white; /* Contraste sur le bouton actif */
+}
+
+.page-button:hover {
+  background-color: #0073e6;
+  color: white; /* Changement de couleur au survol */
+}

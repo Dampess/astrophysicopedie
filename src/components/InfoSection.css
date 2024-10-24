@@ -1,0 +1,54 @@
+.info-section {
+  margin-top: 12vh;
+  padding-right: 20px; /* Espacement intérieur */
+  border-radius: 10px; /* Coins arrondis */
+  color: #ffffff; /* Couleur du texte */
+}
+
+.info-cards {
+  display: grid; /* Utilisation de Grid pour la mise en page */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colonnes flexibles */
+  gap: 20px; /* Espacement entre les cartes */
+  margin-top: 20px; /* Espacement supérieur */
+}
+
+.info-card {
+  border: 0;
+  border-top: 3px;
+  border-style: ridge;
+  border-color: #ffffff;
+  background-color: rgba(40, 40, 40, 0.300); /* Couleur de fond semi-transparente */
+  padding: 5px; /* Espacement intérieur */
+  text-align: center; /* Alignement du texte au centre */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transition pour les effets au survol */
+}
+
+.info-card:hover {
+  transform: translateY(-5px); /* Légère élévation au survol */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Ombre plus prononcée au survol */
+}
+
+.info-card h3 {
+  font-size: 1.2em; /* Ajuste la taille du titre */
+}
+
+.info-card p {
+  font-size: 0.9em; /* Ajuste la taille du paragraphe */
+}
+
+.info-card .icon {
+  width: 40px; /* Ajuste la taille des icônes */
+  height: 40px; /* Ajuste la taille des icônes */
+}
+
+.link-icon {
+  position: absolute; /* Positionnement absolu pour le coin supérieur droit */
+  top: 8px; /* Ajuster selon l'espace désiré */
+  right: 8px; /* Ajuster selon l'espace désiré */
+  color: currentColor; /* Couleur héritée du texte */
+  text-decoration: none; /* Enlever le soulignement du lien */
+}
+
+.link-icon:hover {
+  color: #007bff; /* Couleur au survol (peut être modifié selon votre thème) */
+}

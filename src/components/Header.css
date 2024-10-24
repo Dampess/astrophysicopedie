@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.header {
+  background-color: rgba(24, 24, 50, 0.95);
+  color: #ffffff;
+  padding: 2px 25px; /* Ajustement de l'espacement pour réduire le dépassement */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(38, 36, 81, 0.5);
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s;
+}
+
+a{
+  text-decoration: none;
+  color: #ffffff;
+}
+.header:hover{
+  background-color:rgba(24, 24, 50);
+}
+
+.logo {
+  font-size: 2.5rem; /* Taille de la police pour le logo */
+  font-weight: bold;
+}
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav li {
+  margin: 0 15px; /* Espacement entre les éléments de la navigation */
+}
+
+.nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem; /* Ajustement de la taille de la police pour plus d'harmonie */
+  position: relative;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px; /* Épaisseur de la ligne de soulignement */
+  background: #007bff; /* Couleur de la ligne de soulignement */
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Position de la ligne de soulignement */
+}
+
+.nav a:hover {
+  color: #007bff; /* Couleur au survol */
+  transform: translateY(-2px); /* Légère élévation au survol */
+  cursor: pointer;
+}
+
+.nav a:hover::after {
+  width: 100%; /* Élargir la ligne de soulignement au survol */
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 10px; /* Réduire le padding sur les petits écrans */
+  }
+
+  .nav ul {
+    flex-direction: column; /* Empiler les éléments sur les petits écrans */
+    align-items: center; /* Centrer les éléments */
+    padding: 10px 0; /* Ajout d'espacement autour de la liste */
+  }
+
+  .nav li {
+    margin: 10px 0; /* Espacement vertical entre les éléments */
+  }
+
+  .logo {
+    margin-right: 0; /* Supprimer l'espacement à droite du logo */
+  }
+}

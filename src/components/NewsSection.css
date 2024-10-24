@@ -1,0 +1,98 @@
+.news-section {
+  padding: 20px;
+  color: black;
+}
+
+.news-cards {
+  display: grid; /* Utiliser une grille pour un meilleur agencement */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Nombre de colonnes flexibles */
+  gap: 20px; /* Espace entre les cartes */
+  text-align: left;
+}
+
+.news-card {
+  background: white;
+  border: 1px solid #ddd; /* Bordure pour les cartes */
+  border-radius: 8px; /* Coins arrondis */
+  overflow: hidden; /* Empêche le débordement du contenu */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre pour l'effet de profondeur */
+  transition: transform 0.2s; /* Transition pour l'effet au survol */
+  display: flex;
+  flex-direction: column; /* Aligner le contenu verticalement */
+  text-align:left; /* Centrer le texte */
+}
+
+.news-card:hover {
+  transform: scale(1.02); /* Zoom léger au survol */
+}
+
+.news-image {
+  width: 100%; /* Assure que l'image occupe toute la largeur */
+  height: 300px; /* Hauteur fixe pour uniformiser l'affichage */
+  object-fit: cover; /* Recadrer l'image pour qu'elle ne soit pas déformée */
+  border-bottom: 1px solid #ddd; /* Bordure en bas de l'image */
+}
+
+/* Taille normale */
+.news-card.normal {
+  
+  height: auto; /* Hauteur auto pour les cartes normales */
+}
+
+/* Taille moyenne */
+.news-card.middle {
+  grid-column: span 1; /* S'étend sur deux colonnes */
+  height: auto; /* Hauteur auto pour la carte moyenne */
+}
+
+/* Taille grande */
+.news-card.large {
+  grid-column: span 1; /* S'étend sur trois colonnes */
+  height: auto; /* Hauteur auto pour la carte grande */
+}
+
+.news-card h3 {
+  font-size: 1.3em;
+  margin: 10px; /* Ajout de marges pour le titre */
+  font-weight: bold; /* Texte en gras pour le titre */
+}
+
+.news-card p {
+  font-size: 0.95em;
+  padding: 0 10px 10px; /* Padding pour le texte */
+  flex-grow: 1; /* Permet au paragraphe de s'étendre */
+}
+
+/* Ajout de styles pour un meilleur contraste */
+.news-card p {
+  color: #555; /* Couleur de texte plus douce */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.prev-btn,
+.next-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.prev-btn:disabled,
+.next-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.prev-btn:hover:not(:disabled),
+.next-btn:hover:not(:disabled) {
+  background-color: #0056b3;
+}

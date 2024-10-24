@@ -1,0 +1,68 @@
+.laws-section {
+  padding: 20px;
+  margin: auto;
+  text-align: left;
+  color: #333;
+}
+
+.laws-section h2 {
+  margin-top: 20vh;
+}
+
+.laws-list {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.law-item {
+  background: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.law-icon {
+  display: inline-block;
+  margin-right: 10px; /* Ajoute un espace entre l'icône et le titre */
+}
+
+.law-item h3 {
+  font-size: 1.5rem;
+  color: #0073e6;
+  text-align: left;
+}
+
+.law-item p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.learn-more-link {
+  color: #0073e6;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem; /* Agrandir le lien */
+  border: none; /* Enlever le style de bord par défaut */
+  background: transparent; /* Fond transparent */
+  cursor: pointer; /* Changer le curseur */
+  margin-bottom: 10px; /* Espace sous le bouton */
+  text-align: left;
+}
+
+.law-description {
+  margin-top: 10px; /* Espace entre le bouton et la description */
+}
+
+.more-info-link {
+  display: inline-block;
+  color: #0073e6;
+  margin-top: 10px;
+  text-decoration: underline;
+  text-align: left;
+}
