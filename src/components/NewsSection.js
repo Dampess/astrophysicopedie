@@ -93,7 +93,7 @@ const NewsSection = () => {
       <div className="news-cards">
         {currentCards.map((news, index) => (
           <div className={`news-card ${news.size}`} key={index}>
-            <img src={news.image} alt={news.title} className="news-image" />
+            <img src={`${process.env.PUBLIC_URL}${news.image}`} alt={news.title} className="news-image" />
             <h3>{news.title}</h3>
             <p>{news.description}</p>
           </div>

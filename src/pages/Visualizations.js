@@ -24,7 +24,7 @@ const Visualizations = () => {
             Accéder à la carte des étoiles
           </a>
           <img
-            src="/images/stars-visualization.svg"
+            src={`${process.env.PUBLIC_URL}/images/Laws2.png`}
             alt="Visualisation des étoiles"
             className="visualization-image"
           />
@@ -42,7 +42,7 @@ const Visualizations = () => {
             Explorer les constellations
           </a>
           <img
-            src="/images/constellations-visualization.svg"
+            src={`${process.env.PUBLIC_URL}/images/StarsMap.png`}
             alt="Visualisation des constellations"
             className="visualization-image"
           />
@@ -60,7 +60,7 @@ const Visualizations = () => {
             Découvrir les galaxies
           </a>
           <img
-            src="/images/galaxies-visualization.svg"
+            src={`${process.env.PUBLIC_URL}/images/Tools.png`}
             alt="Visualisation des galaxies"
             className="visualization-image"
           />

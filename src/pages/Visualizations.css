@@ -24,7 +24,9 @@
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
-  text-align: center;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .visualization-card:hover {
@@ -35,6 +37,7 @@
   width: 100px;
   height: 100px;
   margin-top: 15px;
+  align-self: center;
 }
 
 .visualization-link {
