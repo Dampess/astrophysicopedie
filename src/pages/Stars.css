@@ -78,6 +78,7 @@
 /* Pagination */
 .pagination {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-top: 20px;
 }
@@ -87,7 +88,7 @@
   color: white;
   border: none;
   padding: 10px 15px;
-  margin: 0 5px;
+  margin: 0 10px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -130,6 +131,10 @@
 
   .star-image {
     height: 150px; /* Réduction de la hauteur de l'image */
+  }
+
+  .pagination button {
+    padding: 0;
   }
 }
 

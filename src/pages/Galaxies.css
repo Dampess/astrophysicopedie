@@ -68,3 +68,29 @@
 .pagination span {
   font-size: 16px;
 }
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+  .galaxy-card h3 {
+    font-size: 1.3rem; /* Réduit la taille du titre */
+  }
+
+  .galaxy-card p {
+    font-size: 0.9rem; /* Réduit la taille du texte descriptif */
+  }
+
+  .galaxies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Ajuste la taille minimale pour les petites cartes */
+  }
+}
+
+/* Responsivité pour les grands écrans */
+@media (min-width: 1440px) {
+  .galaxy-card h3 {
+    font-size: 1.8rem; /* Augmente la taille du titre pour les grands écrans */
+  }
+
+  .galaxy-card p {
+    font-size: 1.1rem; /* Augmente la taille du texte descriptif pour les grands écrans */
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Galaxies.css"; // Créez ce fichier CSS pour les styles
 
 const Galaxies = () => {
@@ -156,8 +156,24 @@ const Galaxies = () => {
   ];
 
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 6;
+  const [itemsPerPage, setItemsPerPage] = useState(6); // Nombre d'éléments par page
   const totalPages = Math.ceil(galaxiesData.length / itemsPerPage);
+
+  // Mettre à jour le nombre d'éléments par page en fonction de la taille de l'écran
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      if (window.innerWidth < 768) {
+        setItemsPerPage(4); // Afficher 3 galaxies sur les petits écrans
+      } else {
+        setItemsPerPage(6); // Afficher 6 galaxies sur les grands écrans
+      }
+    };
+
+    updateItemsPerPage(); // Mettre à jour au premier rendu
+
+    window.addEventListener("resize", updateItemsPerPage); // Mettre à jour lors du redimensionnement
+    return () => window.removeEventListener("resize", updateItemsPerPage); // Nettoyer l'écouteur
+  }, []);
 
   const handleNextPage = () => {
     setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages - 1));

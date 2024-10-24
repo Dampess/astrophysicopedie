@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./NewsSection.css"; // Assurez-vous d'avoir un fichier CSS pour les styles
 
 const NewsSection = () => {
@@ -48,7 +48,25 @@ const NewsSection = () => {
   ];
 
   const [currentPage, setCurrentPage] = useState(1); // Page actuelle
-  const cardsPerPage = 4; // Nombre de cartes par page
+  const [cardsPerPage, setCardsPerPage] = useState(3); // Nombre de cartes par page par défaut (pour les grands écrans)
+
+  // Mettre à jour le nombre de cartes par page en fonction de la taille de l'écran
+  useEffect(() => {
+    const updateCardsPerPage = () => {
+      if (window.innerWidth < 768) {
+        setCardsPerPage(2); // 2 cartes sur les petits écrans
+      } else {
+        setCardsPerPage(3); // 3 cartes sur les grands écrans
+      }
+    };
+
+    updateCardsPerPage(); // Exécutez au chargement du composant
+    window.addEventListener("resize", updateCardsPerPage); // Ajoutez un écouteur d'événements pour les redimensionnements
+
+    return () => {
+      window.removeEventListener("resize", updateCardsPerPage); // Nettoyez l'écouteur lors du démontage
+    };
+  }, []);
 
   // Calcul de l'index des cartes à afficher
   const indexOfLastCard = currentPage * cardsPerPage;

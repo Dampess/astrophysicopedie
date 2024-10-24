@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Stars.css"; // Créez un fichier CSS pour styliser cette page
 
 const Stars = () => {
@@ -203,10 +203,23 @@ const Stars = () => {
     },
   ];
 
-
-
-  const starsPerPage = 6; // Nombre d'étoiles à afficher par page
+  const [starsPerPage, setStarsPerPage] = useState(6); // Nombre d'étoiles à afficher par page
   const [currentPage, setCurrentPage] = useState(1); // État pour suivre la page actuelle
+
+  useEffect(() => {
+    const updateStarsPerPage = () => {
+      if (window.innerWidth < 768) {
+        setStarsPerPage(4); // Afficher 3 étoiles sur les petits écrans
+      } else {
+        setStarsPerPage(6); // Afficher 6 étoiles sur les grands écrans
+      }
+    };
+
+    updateStarsPerPage(); // Mettre à jour au premier rendu
+
+    window.addEventListener("resize", updateStarsPerPage); // Mettre à jour lors du redimensionnement de la fenêtre
+    return () => window.removeEventListener("resize", updateStarsPerPage); // Nettoyer l'écouteur
+  }, []);
 
   // Calculer les étoiles à afficher en fonction de la page actuelle
   const indexOfLastStar = currentPage * starsPerPage;
