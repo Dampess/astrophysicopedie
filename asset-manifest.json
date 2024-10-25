@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/astrophysicopedie/static/css/main.7f5d0d70.css",
-    "main.js": "/astrophysicopedie/static/js/main.4d578402.js",
+    "main.css": "/astrophysicopedie/static/css/main.5e82cfcb.css",
+    "main.js": "/astrophysicopedie/static/js/main.ccfcac42.js",
     "static/js/453.875c11b1.chunk.js": "/astrophysicopedie/static/js/453.875c11b1.chunk.js",
     "static/media/bg-HomePage.jpg": "/astrophysicopedie/static/media/bg-HomePage.5cd446c95a79241e4c25.jpg",
+    "static/media/jupiter.jpg": "/astrophysicopedie/static/media/jupiter.f25b13f39eb2e543fc05.jpg",
     "static/media/exoplanete.jpg": "/astrophysicopedie/static/media/exoplanete.90ff0f0fe8a8f92f9706.jpg",
     "static/media/trous-noir.jpg": "/astrophysicopedie/static/media/trous-noir.5f338a92aa6efa25abb6.jpg",
     "index.html": "/astrophysicopedie/index.html",
-    "main.7f5d0d70.css.map": "/astrophysicopedie/static/css/main.7f5d0d70.css.map",
-    "main.4d578402.js.map": "/astrophysicopedie/static/js/main.4d578402.js.map",
+    "main.5e82cfcb.css.map": "/astrophysicopedie/static/css/main.5e82cfcb.css.map",
+    "main.ccfcac42.js.map": "/astrophysicopedie/static/js/main.ccfcac42.js.map",
     "453.875c11b1.chunk.js.map": "/astrophysicopedie/static/js/453.875c11b1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f5d0d70.css",
-    "static/js/main.4d578402.js"
+    "static/css/main.5e82cfcb.css",
+    "static/js/main.ccfcac42.js"
   ]
 }
