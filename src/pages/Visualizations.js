@@ -3,6 +3,22 @@ import React from "react";
 import "./Visualizations.css"; // Importez un fichier CSS pour styliser la page
 
 const Visualizations = () => {
+  // Fonction pour gérer les clics sur les liens externes
+  const handleExternalLinkClick = (url) => {
+    console.log(`Tentative d'ouverture de l'URL: ${url}`); // Ajout d'un log pour le débogage
+    // Empêche le comportement par défaut
+    const confirmation = window.confirm(
+      "Ce lien vous redirigera vers un site externe. Souhaitez-vous continuer ?"
+    );
+
+    if (confirmation) {
+      // Ouvrir le lien dans un nouvel onglet
+      window.open(url, "_blank");
+    } else {
+      console.log("L'utilisateur a annulé."); // Log si l'utilisateur annule
+    }
+  };
+
   return (
     <div className="visualizations-section">
       <h2>Visualisations interactives</h2>
@@ -20,9 +36,16 @@ const Visualizations = () => {
             Manipulez les données pour observer des détails spécifiques et
             obtenir des informations sur chaque étoile.
           </p>
-          <a href="/tools/sky-map" className="visualization-link">
-            Accéder à la carte des étoiles
-          </a>
+          <button
+            className="visualization-link"
+            onClick={() =>
+              handleExternalLinkClick(
+                "https://www.stelvision.com/astro/carte-ciel/"
+              )
+            }
+          >
+            Accéder à la carte des étoiles (Lien externe)
+          </button>
           <img
             src={`${process.env.PUBLIC_URL}/images/Laws2.png`}
             alt="Visualisation des étoiles"
@@ -38,9 +61,14 @@ const Visualizations = () => {
             comment elles changent au fil des saisons et interagissez pour
             identifier les constellations visibles depuis votre région.
           </p>
-          <a href="/tools/constellations-map" className="visualization-link">
-            Explorer les constellations
-          </a>
+          <button
+            className="visualization-link"
+            onClick={() =>
+              handleExternalLinkClick("https://astronomes.com/carte-du-ciel/")
+            }
+          >
+            Explorer les constellations (Lien externe)
+          </button>
           <img
             src={`${process.env.PUBLIC_URL}/images/StarsMap.png`}
             alt="Visualisation des constellations"
@@ -56,9 +84,16 @@ const Visualizations = () => {
             galaxies, leurs distances, leurs formes et leurs caractéristiques
             uniques.
           </p>
-          <a href="/tools/galaxies-map" className="visualization-link">
-            Découvrir les galaxies
-          </a>
+          <button
+            className="visualization-link"
+            onClick={() =>
+              handleExternalLinkClick(
+                "https://sciencepost.fr/la-carte-interactive-univers-precise-jamais-realisee/"
+              )
+            }
+          >
+            Découvrir les galaxies (Lien externe)
+          </button>
           <img
             src={`${process.env.PUBLIC_URL}/images/Tools.png`}
             alt="Visualisation des galaxies"

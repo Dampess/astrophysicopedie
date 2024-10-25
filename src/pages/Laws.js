@@ -18,11 +18,11 @@ const Laws = () => {
         </svg>
       ),
       para1:
-        "La gravité est une force fondamentale qui attire les objets les uns vers les autres en fonction de leur masse.",
+        "La gravité est une force fondamentale de l'univers, décrite comme une attraction mutuelle entre deux masses. Plus les objets sont massifs, plus la force d'attraction qui les unit est grande. Elle agit de manière invisible mais perceptible autour de nous, car elle maintient les objets ancrés au sol, empêche les planètes de dériver dans l'espace, et assure que la lune reste en orbite autour de la Terre.",
       para2:
-        "Elle joue un rôle central dans l'univers, responsable des orbites planétaires et du mouvement des galaxies.",
+        "La gravité est cruciale dans la structuration de l'univers : elle régule les mouvements des planètes, des étoiles et des galaxies. Sans elle, les étoiles n'auraient jamais fusionné en galaxies, et les planètes n'auraient pas formé leurs orbites stables autour des étoiles. La gravité est aussi au cœur de phénomènes extraordinaires comme les trous noirs, qui sont des régions d'attraction gravitationnelle si intense que même la lumière ne peut s'en échapper.",
       para3:
-        "Un exemple classique est la pomme qui tombe de l'arbre, inspirant Newton à formuler sa loi de la gravitation universelle.",
+        "L'exemple le plus célèbre de l'effet de la gravité est sans doute la légende de la pomme de Newton. Selon cette histoire, Isaac Newton aurait vu une pomme tomber d'un arbre et aurait alors eu l'intuition que la même force qui attirait la pomme vers le sol était également responsable de l'orbite de la lune autour de la Terre. Cette observation a été un point de départ pour la formulation de la loi de la gravitation universelle, qui décrit comment les objets se comportent en fonction de leur masse et de la distance qui les sépare.",
     },
     {
       title: "La vitesse de la lumière",
@@ -38,11 +38,11 @@ const Laws = () => {
         </svg>
       ),
       para1:
-        "La vitesse de la lumière est la vitesse maximale à laquelle toute information ou matière peut voyager.",
+        "La vitesse de la lumière dans le vide est d'environ 299 792 458 mètres par seconde, ce qui en fait la vitesse maximale à laquelle toute information, énergie ou matière peut voyager. Cette limite universelle signifie que tout ce qui se déplace dans l'univers ne peut pas dépasser cette vitesse. C'est une propriété fondamentale de la lumière dans le vide, mais elle peut être réduite lorsqu'elle passe à travers d'autres milieux, comme l'eau ou le verre, où elle est ralentie.",
       para2:
-        "Elle est essentielle pour la théorie de la relativité d'Einstein, qui affirme que rien ne peut aller plus vite que cette vitesse dans le vide.",
+        "La vitesse de la lumière joue un rôle crucial dans la théorie de la relativité restreinte d'Albert Einstein. Selon cette théorie, la vitesse de la lumière est une constante invariable dans l'univers, quel que soit le référentiel de l'observateur. Cela signifie que, dans le vide, rien ne peut aller plus vite que la lumière. Cette limitation entraîne des effets relatifs, comme la dilatation du temps et la contraction de l'espace, qui ont transformé notre compréhension de l'espace-temps et de la gravité.",
       para3:
-        "Les distances en astrophysique, comme les années-lumière, mesurent la distance parcourue par la lumière en un an.",
+        "En astrophysique, la vitesse de la lumière est également une référence pour mesurer de grandes distances. Par exemple, une année-lumière correspond à la distance parcourue par la lumière en un an, soit environ 9 460 milliards de kilomètres. Cette unité de mesure permet de quantifier les vastes distances entre les étoiles et les galaxies, rendant ainsi compréhensibles les dimensions immenses de l'univers observable.",
     },
     {
       title: "La loi de Newton",
@@ -401,6 +401,7 @@ const Laws = () => {
                 <div className="law-description">
                   <p>{law.description}</p>
                   <Link
+                    className="more-info-link"
                     to={`/laws/${law.title}`}
                     state={{
                       title: law.title,

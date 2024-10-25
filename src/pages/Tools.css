@@ -2,10 +2,19 @@
   padding: 20px;
   text-align: left;
   color: black;
+  backdrop-filter: blur(2px);
+  background: linear-gradient(
+    180deg,
+    #1e3b727b 0%,
+    #2a52987c 50%,
+    #1b1c25b0 100%
+  );
 }
 .tools-section h2{
     margin-top: 20vh;
+    color: #fff;
 }
+
 .tools-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -36,13 +45,20 @@
 }
 
 .tool-link {
+  display: inline-block;
+  margin-top: 10px;
   color: #007BFF;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 10px;
-  display: inline-block;
+  background:  #d7d9e8 100%;
+  border: 1px ridge;
+  transition: transform 0.2s ease-in-out;
+  border-radius: 4px;
+  padding: 5px 10px;
 }
 
 .tool-link:hover {
   text-decoration: underline;
+  cursor: pointer;
+  transform: scale(1.05);
 }

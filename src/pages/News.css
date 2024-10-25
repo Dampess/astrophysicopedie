@@ -1,13 +1,44 @@
+.bg-img3 {
+  background-image: url("../assets/images/jupiter.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* Article component */
+.article-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+  background:  #d7d9e8 100%;
+  border: 1px ridge;
+  transition: transform 0.2s ease-in-out;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.article-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+/* General page */
 .news-container {
-  max-width: 1200px;
-  margin: 20px auto;
   padding: 20px;
   color: #333;
-  border-radius: 12px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grille responsive */
   gap: 20px;
-  
+  backdrop-filter: blur(2px);
+  background: linear-gradient(
+    180deg,
+    #1e3b727b 0%,
+    #2a52987c 50%,
+    #1b1c25b0 100%
+  );
 }
 
 .news-container h2 {
@@ -15,7 +46,7 @@
   margin-bottom: 20px;
   margin-top: 20vh;
   font-size: 2em;
-  color: #2c3e50;
+  color: #ffffff;
   font-weight: bold;
   grid-column: span 3; /* S'étend sur toute la largeur */
 }

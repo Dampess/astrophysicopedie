@@ -3,10 +3,22 @@
   margin: auto;
   text-align: left;
   color: #333;
+  backdrop-filter: blur(2px);
+  background: linear-gradient(
+    180deg,
+    #1e3b727b 0%,
+    #2a52987c 50%,
+    #1b1c25b0 100%
+  );
 }
 
 .laws-section h2 {
   margin-top: 20vh;
+  color: #fff;
+}
+
+.laws-section p{
+  color: #fff;
 }
 
 .laws-list {
@@ -41,6 +53,7 @@
   font-size: 1rem;
   margin-bottom: 10px;
   text-align: left;
+  color: #333;
 }
 
 .learn-more-link {

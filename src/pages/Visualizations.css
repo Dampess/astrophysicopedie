@@ -2,10 +2,18 @@
   padding: 20px;
   text-align: left;
   color: black;
+  backdrop-filter: blur(2px);
+  background: linear-gradient(
+    180deg,
+    #1e3b727b 0%,
+    #2a52987c 50%,
+    #1b1c25b0 100%
+  );
 }
 
 .visualizations-section h2{
     margin-top: 20vh;
+    color: #fff;
 }
 
 .visualizations-grid {
@@ -46,8 +54,15 @@
   color: #007BFF;
   text-decoration: none;
   font-weight: bold;
+  background:  #d7d9e8 100%;
+  border: 1px ridge;
+  transition: transform 0.2s ease-in-out;
+  border-radius: 4px;
+  padding: 5px 10px;
 }
 
 .visualization-link:hover {
   text-decoration: underline;
+  cursor: pointer;
+  transform: scale(1.05);
 }
