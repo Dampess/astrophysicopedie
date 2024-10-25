@@ -4,7 +4,7 @@ import "./LawDetails.css";
 
 const LawDetails = () => {
   const location = useLocation();
-  const { title, description } = location.state || {};
+  const { title, description, para1, para2, para3 } = location.state || {};
 
   // Vérifier si la loi existe
   if (!title) {
@@ -18,6 +18,12 @@ const LawDetails = () => {
       </header>
       <section className="law-content">
         <p>{description}</p>
+        <h2>Introduction</h2>
+        <p>{para1}</p>
+        <h2>Détails</h2>
+        <p>{para2}</p>
+        <h2>Exemple d'application</h2>
+        <p>{para3}</p>
       </section>
       <footer className="law-footer">
         <Link to="/laws" className="back-link">
