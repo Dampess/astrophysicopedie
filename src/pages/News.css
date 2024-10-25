@@ -7,22 +7,22 @@
 }
 /* Article component */
 .article-link {
-  display: inline-block;
-  margin-top: 10px;
-  color: #007BFF;
-  text-decoration: none;
-  font-weight: bold;
-  background:  #d7d9e8 100%;
-  border: 1px ridge;
-  transition: transform 0.2s ease-in-out;
-  border-radius: 4px;
+  margin-top: 30px;
   padding: 5px 10px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+  border: none;
+  border-radius: 5px;
+  color: var(--text-dark);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  z-index: 2;
 }
 
 .article-link:hover {
-  text-decoration: underline;
-  cursor: pointer;
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
   transform: scale(1.05);
+  box-shadow: 0 4px 20px var(--shadow-dark);
 }
 
 /* General page */
