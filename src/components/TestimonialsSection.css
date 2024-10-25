@@ -2,7 +2,7 @@
 .testimonial-section {
   padding: 10px 5px;
   border-radius: 15px;
-  background-color: #33333345;
+  background: linear-gradient(135deg, #d6deea 0%, #afbcd2 50%, #9094b8e1 100%);
   color: #333;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
   margin: 10vh auto;

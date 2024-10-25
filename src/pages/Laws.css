@@ -19,7 +19,7 @@
 }
 
 .law-item {
-  background: #f9f9f9;
+ background: linear-gradient(135deg, #d6deea 0%, #afbcd2 50%, #9094b8e1 100%);
   padding: 15px;
   margin-bottom: 15px;
   border-radius: 8px;
@@ -65,4 +65,18 @@
   margin-top: 10px;
   text-decoration: underline;
   text-align: left;
+}
+
+.search-bar {
+  width: 15%;
+  padding: 8px;
+  margin: 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+@media (max-width:780px) {
+  .search-bar{
+    width: 45%;
+  }
 }

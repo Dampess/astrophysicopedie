@@ -188,25 +188,32 @@ const Galaxies = () => {
   ];
 
   const [currentPage, setCurrentPage] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(6); // Nombre d'éléments par page
-  const totalPages = Math.ceil(galaxiesData.length / itemsPerPage);
+  const [itemsPerPage, setItemsPerPage] = useState(6);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  // Mettre à jour le nombre d'éléments par page en fonction de la taille de l'écran
+  // Mise à jour du nombre d'éléments par page en fonction de la taille de l'écran
   useEffect(() => {
     const updateItemsPerPage = () => {
       if (window.innerWidth < 768) {
-        setItemsPerPage(4); // Afficher 3 galaxies sur les petits écrans
+        setItemsPerPage(4); // Afficher 4 galaxies sur les petits écrans
       } else {
         setItemsPerPage(6); // Afficher 6 galaxies sur les grands écrans
       }
     };
 
-    updateItemsPerPage(); // Mettre à jour au premier rendu
-
-    window.addEventListener("resize", updateItemsPerPage); // Mettre à jour lors du redimensionnement
-    return () => window.removeEventListener("resize", updateItemsPerPage); // Nettoyer l'écouteur
+    updateItemsPerPage();
+    window.addEventListener("resize", updateItemsPerPage);
+    return () => window.removeEventListener("resize", updateItemsPerPage);
   }, []);
 
+  // Filtrer les galaxies en fonction du terme de recherche
+  const filteredGalaxies = galaxiesData.filter((galaxy) =>
+    galaxy.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const totalPages = Math.ceil(filteredGalaxies.length / itemsPerPage);
+
+  // Gestion de la navigation entre les pages
   const handleNextPage = () => {
     setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages - 1));
   };
@@ -215,47 +222,73 @@ const Galaxies = () => {
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 0));
   };
 
+  // Calculer l'index de départ et des galaxies pour la page actuelle
   const startIndex = currentPage * itemsPerPage;
-  const currentGalaxies = galaxiesData.slice(
+  const currentGalaxies = filteredGalaxies.slice(
     startIndex,
     startIndex + itemsPerPage
   );
 
+  // Gestion de la recherche
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+    setCurrentPage(0); // Réinitialiser à la première page lors d'une nouvelle recherche
+  };
+
   return (
-    <div className="galaxies-section">
-      <h2>Les Galaxies : Les Briques de l'Univers</h2>
-      <p>
-        Les galaxies sont des collections massives de gaz, de poussières et de
-        milliards d'étoiles, liées par la gravité. Elles forment les grandes
-        structures de l'univers, et sont fondamentales pour comprendre sa
-        formation et son évolution.
-      </p>
-      <div className="galaxies-grid">
-        {currentGalaxies.map((galaxy, index) => (
-          <div className="galaxy-card" key={index}>
-            <img
-              src={galaxy.image}
-              alt={galaxy.name}
-              className="galaxy-image"
-            />
-            <h3>{galaxy.name}</h3>
-            <p>{galaxy.description}</p>
-          </div>
-        ))}
-      </div>
-      <div className="pagination">
-        <button onClick={handlePrevPage} disabled={currentPage === 0}>
-          Précédent
-        </button>
-        <span>
-          Page {currentPage + 1} sur {totalPages}
-        </span>
-        <button
-          onClick={handleNextPage}
-          disabled={currentPage === totalPages - 1}
-        >
-          Suivant
-        </button>
+    <div className="bg-img2">
+      <div className="galaxies-section">
+        <h2>Les Galaxies : Les Briques de l'Univers</h2>
+        <p>
+          Les galaxies sont des collections massives de gaz, de poussières et de
+          milliards d'étoiles, liées par la gravité. Elles forment les grandes
+          structures de l'univers, et sont fondamentales pour comprendre sa
+          formation et son évolution.
+        </p>
+
+        {/* Barre de recherche */}
+        <input
+          type="text"
+          placeholder="Rechercher une galaxie..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+          className="search-bar"
+        />
+
+        {/* Grille des galaxies */}
+        <div className="galaxies-grid">
+          {currentGalaxies.length > 0 ? (
+            currentGalaxies.map((galaxy, index) => (
+              <div className="galaxy-card" key={index}>
+                <img
+                  src={galaxy.image}
+                  alt={galaxy.name}
+                  className="galaxy-image"
+                />
+                <h3>{galaxy.name}</h3>
+                <p>{galaxy.description}</p>
+              </div>
+            ))
+          ) : (
+            <p>Aucune galaxie trouvée pour ce terme de recherche.</p>
+          )}
+        </div>
+
+        {/* Pagination */}
+        <div className="pagination">
+          <button onClick={handlePrevPage} disabled={currentPage === 0}>
+            Précédent
+          </button>
+          <span>
+            Page {currentPage + 1} sur {totalPages}
+          </span>
+          <button
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages - 1}
+          >
+            Suivant
+          </button>
+        </div>
       </div>
     </div>
   );

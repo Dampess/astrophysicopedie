@@ -121,7 +121,6 @@
 
 .feature-section {
   padding: 50px 20px;
-  background-color: #f8f9fa;
   text-align: center;
 }
 
@@ -137,7 +136,7 @@
 }
 
 .feature {
-  background-color: #fff;
+  background: linear-gradient(135deg, #d6deea 0%, #afbcd2 50%, #9094b8e1 100%);
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   padding: 20px;

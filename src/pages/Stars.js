@@ -236,34 +236,45 @@ const Stars = () => {
     },
   ];
 
-  const [starsPerPage, setStarsPerPage] = useState(6); // Nombre d'étoiles à afficher par page
-  const [currentPage, setCurrentPage] = useState(1); // État pour suivre la page actuelle
+  const [starsPerPage, setStarsPerPage] = useState(6);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const updateStarsPerPage = () => {
       if (window.innerWidth < 768) {
-        setStarsPerPage(4); // Afficher 3 étoiles sur les petits écrans
+        setStarsPerPage(4); // Afficher 4 étoiles sur les petits écrans
       } else {
         setStarsPerPage(6); // Afficher 6 étoiles sur les grands écrans
       }
     };
 
-    updateStarsPerPage(); // Mettre à jour au premier rendu
-
-    window.addEventListener("resize", updateStarsPerPage); // Mettre à jour lors du redimensionnement de la fenêtre
-    return () => window.removeEventListener("resize", updateStarsPerPage); // Nettoyer l'écouteur
+    updateStarsPerPage();
+    window.addEventListener("resize", updateStarsPerPage);
+    return () => window.removeEventListener("resize", updateStarsPerPage);
   }, []);
 
-  // Calculer les étoiles à afficher en fonction de la page actuelle
+  // Filtrer les étoiles en fonction du terme de recherche
+  const filteredStars = starsData.filter((star) =>
+    star.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // Pagination pour les étoiles filtrées
   const indexOfLastStar = currentPage * starsPerPage;
   const indexOfFirstStar = indexOfLastStar - starsPerPage;
-  const currentStars = starsData.slice(indexOfFirstStar, indexOfLastStar);
+  const currentStars = filteredStars.slice(indexOfFirstStar, indexOfLastStar);
 
-  // Calculer le nombre total de pages
-  const totalPages = Math.ceil(starsData.length / starsPerPage);
+  // Calculer le nombre total de pages pour les étoiles filtrées
+  const totalPages = Math.ceil(filteredStars.length / starsPerPage);
 
   // Fonction pour changer de page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  // Fonction de gestion de la recherche
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+    setCurrentPage(1); // Réinitialiser la page courante lors d'une nouvelle recherche
+  };
 
   return (
     <div className="bg-img">
@@ -274,28 +285,45 @@ const Stars = () => {
           illuminent l'univers et produisent les éléments nécessaires à la
           formation des planètes et à la vie.
         </p>
+
+        {/* Barre de recherche */}
+        <input
+          type="text"
+          placeholder="Rechercher une étoile..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+          className="search-bar"
+        />
+
+        {/* Grille des étoiles */}
         <div className="stars-grid">
-          {currentStars.map((star, index) => (
-            <div className="star-card" key={index}>
-              <img src={star.image} alt={star.name} className="star-image" />
-              <h3>{star.name}</h3>
-              <p>{star.description}</p>
-            </div>
-          ))}
+          {currentStars.length > 0 ? (
+            currentStars.map((star, index) => (
+              <div className="star-card" key={index}>
+                <img src={star.image} alt={star.name} className="star-image" />
+                <h3>{star.name}</h3>
+                <p>{star.description}</p>
+              </div>
+            ))
+          ) : (
+            <p>Aucune étoile trouvée pour ce terme de recherche.</p>
+          )}
         </div>
 
         {/* Pagination */}
-        <div className="pagination">
-          {Array.from({ length: totalPages }, (_, index) => (
-            <button
-              key={index + 1}
-              onClick={() => paginate(index + 1)}
-              className={currentPage === index + 1 ? "active" : ""}
-            >
-              {index + 1}
-            </button>
-          ))}
-        </div>
+        {totalPages > 1 && (
+          <div className="pagination">
+            {Array.from({ length: totalPages }, (_, index) => (
+              <button
+                key={index + 1}
+                onClick={() => paginate(index + 1)}
+                className={currentPage === index + 1 ? "active" : ""}
+              >
+                {index + 1}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

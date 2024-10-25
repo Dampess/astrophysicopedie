@@ -136,13 +136,23 @@ const Laws = () => {
     },
   ];
 
+  const [searchTerm, setSearchTerm] = useState("");
   const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+    setExpandedIndex(null); // Réinitialise l'index ouvert lors d'une nouvelle recherche
+  };
+
+  const filteredLaws = lawsData.filter((law) =>
+    law.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const toggleDescription = (index) => {
     if (expandedIndex === index) {
-      setExpandedIndex(null); // Replier si déjà ouvert
+      setExpandedIndex(null);
     } else {
-      setExpandedIndex(index); // Dérouler la description
+      setExpandedIndex(index);
     }
   };
 
@@ -153,28 +163,41 @@ const Laws = () => {
         Découvrez les lois qui régissent notre univers, aussi bien sur Terre que
         dans l'espace.
       </p>
+
+      {/* Barre de recherche */}
+      <input
+        type="text"
+        placeholder="Rechercher une loi..."
+        value={searchTerm}
+        onChange={handleSearchChange}
+        className="search-bar"
+      />
+
       <ul className="laws-list">
-        {lawsData.map((law, index) => (
-          <li key={index} className="law-item">
-            <div className="law-icon">{law.svg}</div>{" "}
-            {/* Affichage de l'icône SVG */}
-            <h3>{law.title}</h3>
-            <button
-              onClick={() => toggleDescription(index)}
-              className="learn-more-link"
-            >
-              {expandedIndex === index ? "Réduire" : "Lire plus"}
-            </button>
-            {expandedIndex === index && (
-              <div className="law-description">
-                <p>{law.description}</p>
-                <a href={law.link} className="more-info-link">
-                  En savoir plus
-                </a>
-              </div>
-            )}
-          </li>
-        ))}
+        {filteredLaws.length > 0 ? (
+          filteredLaws.map((law, index) => (
+            <li key={index} className="law-item">
+              <div className="law-icon">{law.svg}</div>
+              <h3>{law.title}</h3>
+              <button
+                onClick={() => toggleDescription(index)}
+                className="learn-more-link"
+              >
+                {expandedIndex === index ? "Réduire" : "Lire plus"}
+              </button>
+              {expandedIndex === index && (
+                <div className="law-description">
+                  <p>{law.description}</p>
+                  <a href={law.link} className="more-info-link">
+                    En savoir plus
+                  </a>
+                </div>
+              )}
+            </li>
+          ))
+        ) : (
+          <p>Aucune loi trouvée pour ce terme de recherche.</p>
+        )}
       </ul>
     </div>
   );

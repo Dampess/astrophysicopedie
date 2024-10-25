@@ -1,6 +1,6 @@
 .bg-img {
   background-image: url("../assets/images/bg-HomePage.jpg");
-  background-attachment: fixed; /* Fixe l'image pour l'effet de parallaxe */
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -13,12 +13,12 @@
   text-align: left;
   color: #fff;
   backdrop-filter: blur(2px);
-  background-color: rgba(
-    51,
-    51,
-    51,
-    0.29
-  ); /* Couleur d'arrière-plan semi-transparente */
+  background: linear-gradient(
+    180deg,
+    #1e3b727b 0%,
+    #2a52987c 50%,
+    #1b1c25b0 100%
+  );
 }
 
 .stars-section h2 {
@@ -30,6 +30,7 @@
 .stars-section p {
   text-align: left;
   color: #fff;
+  width: 70%;
 }
 
 /* Grille des cartes étoiles */
@@ -42,19 +43,20 @@
 
 /* Carte individuelle d'une étoile */
 .star-card {
-  background: #fff;
+  background: linear-gradient(135deg, #d6deea 0%, #afbcd2 50%, #9094b8e1 100%);
+  border: 1px ridge #d6deea;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.3s ease; /* Ajout de la transition de l'ombre */
   text-align: left;
   border: 1px solid #e0e0e0; /* Bordure pour les cartes */
-  padding: 15px; /* Espacement interne des cartes */
+  padding: 10px; /* Espacement interne des cartes */
 }
 
 .star-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre accentuée au survol */
+  box-shadow: 0 2px 10px rgba(125, 192, 195, 0.8);
 }
 
 .star-image {
@@ -104,6 +106,13 @@
   font-weight: bold;
 }
 
+.search-bar {
+  width: 15%;
+  padding: 8px;
+  margin: 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 /* RESPONSIVITÉ */
 
 /* Pour les petits écrans (moins de 600px) */
@@ -113,7 +122,7 @@
   }
   .stars-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
     margin-top: 20px;
   }
@@ -136,6 +145,10 @@
 
   .pagination button {
     padding: 0;
+  }
+
+  .search-bar{
+    width: 45%;
   }
 }
 
