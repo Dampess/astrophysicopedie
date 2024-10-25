@@ -1,0 +1,58 @@
+/* LawDetails.css */
+.law-details {
+  max-width: 1024px;
+  margin-top: 20vh;
+  margin-bottom: 10vh;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.law-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.law-header h1 {
+  font-size: 2.4rem;
+  color: #007acc;
+  border-bottom: 2px solid #007acc;
+  padding-bottom: 0.5rem;
+}
+
+.law-content {
+  font-size: 1.1rem;
+  color: #555;
+  text-align: justify;
+  padding: 1rem 0;
+}
+
+.law-footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.back-link {
+  font-size: 1rem;
+  color: #007acc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-link:hover {
+  color: #005f99;
+  text-decoration: underline;
+}
+
+.no-law {
+  text-align: center;
+  padding: 2rem;
+  color: #cc0000;
+  font-size: 1.2rem;
+}

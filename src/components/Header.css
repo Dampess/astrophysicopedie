@@ -3,7 +3,7 @@
 .header {
   background-color: rgba(24, 24, 50, 0.95);
   color: #ffffff;
-  padding: 10px 25px;
+  padding: 2px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;

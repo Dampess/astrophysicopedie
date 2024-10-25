@@ -83,14 +83,14 @@ const TestimonialSection = () => {
           onClick={prevTestimonials}
           disabled={currentPage === 0}
         >
-          &lt; Précédent
+           Précédent
         </button>
         <button
           className="nav-button"
           onClick={nextTestimonials}
           disabled={currentPage === totalPages - 1}
         >
-          Suivant &gt;
+          Suivant
         </button>
       </div>
       <div className="pagination">
